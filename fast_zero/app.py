@@ -109,7 +109,7 @@ def login_for_access_token(
     form_data: OAuth2PasswordRequestForm = Depends(),
     session: Session = Depends(get_session),
 ):
-    user = session.scalar(select(User).where(User.email == form_data.username))
+    user = session.scalar(select(User).where(User.email == form_data.email))
 
     if not user or not verify_password(form_data.password, user.password):
         raise HTTPException(

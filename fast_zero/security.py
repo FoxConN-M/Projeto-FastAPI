@@ -6,7 +6,7 @@ from zoneinfo import ZoneInfo
 
 pwd_context = PasswordHash.recommended()
 
-SECRET_KEY = 'your-secret-key'
+SECRET_KEY = 'secret-key-provisoria'
 ALGORITHM = 'HS256'
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
