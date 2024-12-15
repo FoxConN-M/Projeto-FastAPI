@@ -45,3 +45,21 @@ class TodoSchema(BaseModel):
 
 class TodoPublic(TodoSchema):
     id: int
+
+
+class TodoList(BaseModel):
+    todos: list[TodoPublic]
+
+
+class FilterTodo(BaseModel):
+    title: str | None = None
+    description: str | None = None
+    state: TodoState | None = None
+    offset: int | None = None
+    limit: int | None = None
+
+
+class TodoUpdate(BaseModel):
+    title: str | None = None
+    description: str | None = None
+    state: TodoState | None = None
